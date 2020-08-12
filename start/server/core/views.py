@@ -1,5 +1,5 @@
-# flake8: noqa
+from django.views.generic import TemplateView
 
-from django.shortcuts import render
 
-# Create your views here.
+class AppView(TemplateView):
+    template_name = "core/app.html"
