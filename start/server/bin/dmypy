@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+tput setaf 4
+echo "Issues checking in progress..."
+tput sgr0
+dmypy "$@"

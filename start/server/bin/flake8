@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+tput setaf 4
+echo "Issues checking in progress..."
+tput sgr0
+OUTPUT=$(flake8 "$@" || true)
+if [ -z "$OUTPUT" ]; then
+    tput bold
+    tput setaf 2
+    echo "Success: no issues found"
+    tput sgr0
+else
+    echo "$OUTPUT"
+fi

@@ -1,0 +1,8 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "onchange": "^7.1.0"
+  }
+}
