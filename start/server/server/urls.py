@@ -14,9 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from ariadne.contrib.django.views import GraphQLView
 from django.contrib import admin
 from django.urls import path
 
+from core.schema import schema
 from core.views import AppView
 
-urlpatterns = [path("admin/", admin.site.urls), path("", AppView.as_view(), name="app")]
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("graphql/", GraphQLView.as_view(schema=schema), name="graphql"),
+    path("", AppView.as_view(), name="app"),
+]
