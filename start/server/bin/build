@@ -8,3 +8,4 @@ poetry install
 pre-commit install
 npm install
 python manage.py migrate
+python manage.py demodata
