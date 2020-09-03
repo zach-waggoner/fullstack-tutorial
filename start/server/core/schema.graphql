@@ -32,9 +32,15 @@ enum PatchSize {
 }
 
 type Query {
-  launches: [Launch!]!
+  launches(page_size: Int, cursor: String): LaunchConnection!
   launch(pk: ID!): Launch!
   me: User
+}
+
+type LaunchConnection {
+  results: [Launch!]!
+  cursor: String
+  has_more: Boolean!
 }
 
 type Mutation {

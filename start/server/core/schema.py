@@ -14,6 +14,7 @@ from django.db.models import QuerySet
 
 from .graphql import GraphQLResolveInfo
 from .models import Launch, Mission, User
+from .pagination import CursorPagination, PaginatedResponse
 
 PatchSize = Literal["SMALL", "LARGE"]
 
@@ -30,8 +31,16 @@ mission = ObjectType("Mission")
 
 
 @query.field("launches")
-def resolve_launches(obj: None, info: GraphQLResolveInfo) -> QuerySet[Launch]:
-    return Launch.objects.all()
+def resolve_launches(
+    obj: None,
+    info: GraphQLResolveInfo,
+    page_size: int = 20,
+    cursor: Optional[str] = None,
+) -> PaginatedResponse[Launch]:
+    request = info.context["request"]
+    queryset = Launch.objects.all()
+    pagination = CursorPagination[Launch]()
+    return pagination.paginate_queryset(request, queryset, page_size, cursor)
 
 
 @query.field("launch")
