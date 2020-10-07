@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const ActionButton: React.FC<any> = () => {
-  return <div/>;
-}
+  return <div />;
+};
 
 export default ActionButton;

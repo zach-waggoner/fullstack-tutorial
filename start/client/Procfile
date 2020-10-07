@@ -1,0 +1,2 @@
+web: npm start --color=always -- --color=always
+codegen: npm run codegen --color=always -- --color=always

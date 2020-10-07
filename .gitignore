@@ -1,4 +1,5 @@
 *.egg-info
+*.generated.d.ts
 .DS_Store
 .dmypy.json
 .env

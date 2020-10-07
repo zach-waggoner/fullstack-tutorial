@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'react-emotion';
+import React from "react";
+import styled from "react-emotion";
 
-import { unit } from '../styles';
-import { cardClassName, getBackgroundImage } from './launch-tile';
+import { unit } from "../styles";
+import { cardClassName, getBackgroundImage } from "./launch-tile";
 
 const LaunchDetail: React.FC<any> = ({ id, site, rocket }: any) => (
   <Card
@@ -21,7 +21,7 @@ const LaunchDetail: React.FC<any> = ({ id, site, rocket }: any) => (
  * STYLED COMPONENTS USED IN THIS FILE ARE BELOW HERE
  */
 
-const Card = styled('div')(cardClassName, {
+const Card = styled("div")(cardClassName, {
   height: 365,
   marginBottom: unit * 4,
 });

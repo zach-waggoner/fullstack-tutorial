@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const BookTrips: React.FC<any> = () => {
-  return <div/>;
-}
+  return <div />;
+};
 
 export default BookTrips;
