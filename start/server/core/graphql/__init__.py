@@ -2,7 +2,7 @@ from typing import TypedDict
 
 from graphql import GraphQLResolveInfo as BaseGraphQLResolveInfo
 
-from .request import Request
+from core.request import Request
 
 
 class GraphQLResolveInfoContext(TypedDict):

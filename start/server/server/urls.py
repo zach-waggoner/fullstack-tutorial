@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.schema import schema
+from core.graphql.schema import schema
 from core.views import AppView, GraphQLView
 
 urlpatterns = [
